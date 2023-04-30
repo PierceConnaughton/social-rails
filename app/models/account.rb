@@ -8,4 +8,8 @@ class Account < ApplicationRecord
 
   has_many_attached :posts_images
 
+  def full_name
+    "#{fisrt_name} #{last_name}"
+  end
+
 end

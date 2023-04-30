@@ -3,20 +3,17 @@ class PostsController < ApplicationController
   
     def new
         @post = Post.new
-        respond_to do |format|
-          format.html # This line specifies the format for the HTML response
-          format.json { render json: @post }
-        end
       end
       
   
       def create
         @post = current_account.posts.build(post_params)
+        @post.account_id = current_account.id if account_signed_in?
       
         if @post.save
-          redirect_to root_path
+          redirect_to dashboard_path, flash: {success: "Post was created successfully"}
         else
-          render :new
+          redirect_to new_post_path, flash: {danger: "Post was not saved!"}
         end
       end
       
