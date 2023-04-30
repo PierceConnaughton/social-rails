@@ -48,6 +48,17 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
+# images uploaded to Amazon S3
+gem 'carrierwave', '>= 3.0.0.beta', '< 4.0'
+gem 'fog', '~> 1.37.0'
+
+#image resizing
+gem "mini_magick"
+
+gem 'fog-aws'
+
+gem 'activestorage'
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
@@ -68,6 +79,9 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+
+  #access too local ENV vars
+  gem "figaro"
 end
 
 group :test do

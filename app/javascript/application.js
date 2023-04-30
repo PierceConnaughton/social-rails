@@ -4,3 +4,4 @@ import "controllers"
 
 //require bootstrap.min
 //require jquery.min
+//= require jquery_ujs

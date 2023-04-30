@@ -1,0 +1,6 @@
+<%= form_with(model: [current_account, @post], url: account_posts_path(current_account), local: true) do |form| %>
+  <%= form.label :image %>
+  <%= form.file_field :image %>
+
+  <%= form.submit "Create post" %>
+<% end %>
